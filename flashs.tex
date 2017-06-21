@@ -1,0 +1,147 @@
+\usepackage[margin=0mm, top=2mm, left=2mm, right=2mm, bottom=0mm]{geometry}
+\usepackage{tikz}
+\usepackage{pinyin}
+
+\pgfmathsetmacro{\cardwidth}{4.85}
+\pgfmathsetmacro{\cardheight}{6.50}
+
+\newcommand{\cgrave}[1]{\`#1}
+\newcommand{\cacute}[1]{\'#1}
+\newcommand{\ccheck}[1]{\v#1}
+\newcommand{\covbar}[1]{\=#1}
+
+\newcommand{\flashcard}[2]{
+{\noindent\ignorespaces}%
+    \begin{tikzpicture}[grow=west]%
+        \draw[lightgray, rounded corners=0.2cm] (0,0) rectangle (\cardwidth, \cardheight) node[black, pos=.5, scale=2, text width=2cm, align=center] {#1} node[black, pos=(0.5), shift={(0.0ex,-15ex)}, text width=4cm, align=center] {#2};%
+    \end{tikzpicture}%
+    \hspace{0.25cm}%
+}
+
+\newcommand\page[9]{%
+    \def\tempA{#1}%
+    \def\tempa{#2}%
+    \def\tempaa{#3}%
+    \def\tempB{#4}%
+    \def\tempb{#5}%
+    \def\tempbb{#6}%
+    \def\tempC{#7}%
+    \def\tempc{#8}%
+    \def\tempcc{#9}%
+    \pageCont
+}
+
+\newcommand\pageCont[9]{%
+    \def\tempD{#1}%
+    \def\tempd{#2}%
+    \def\tempdd{#3}%
+    \def\tempE{#4}%
+    \def\tempe{#5}%
+    \def\tempee{#6}%
+    \def\tempF{#7}%
+    \def\tempf{#8}%
+    \def\tempff{#9}%
+    \pageContCont
+}
+\newcommand\pageContCont[9]{%
+    \def\tempG{#1}%
+    \def\tempg{#2}%
+    \def\tempgg{#3}%
+    \def\tempH{#4}%
+    \def\temph{#5}%
+    \def\temphh{#6}%
+    \def\tempI{#7}%
+    \def\tempi{#8}%
+    \def\tempii{#9}%
+    \pageContContCont
+}
+
+\newcommand\pageContContCont[9]{%
+    \def\tempJ{#1}%
+    \def\tempj{#2}%
+    \def\tempjj{#3}%
+    \def\tempK{#4}%
+    \def\tempk{#5}%
+    \def\tempkk{#6}%
+    \def\tempL{#7}%
+    \def\templ{#8}%
+    \def\templl{#9}%
+    \pageContContContCont
+}
+
+\newcommand\pageContContContCont[9]{%
+    \def\tempM{#1}%
+    \def\tempm{#2}%
+    \def\tempmm{#3}%
+    \def\tempN{#4}%
+    \def\tempn{#5}%
+    \def\tempnn{#6}%
+    \def\tempO{#7}%
+    \def\tempo{#8}%
+    \def\tempoo{#9}%
+    \pageContContContContCont
+}
+
+\newcommand\pageContContContContCont[3]{%
+    \def\tempP{#1}%
+    \def\tempp{#2}%
+    \def\temppp{#3}%
+    \makePage
+}
+
+
+\newcommand{\makePage}{
+    \raggedright{
+        \flashcard{\tempA}{}% 
+        \flashcard{\tempB}{}% 
+        \flashcard{\tempC}{}% 
+        \flashcard{\tempD}{}% 
+
+        \vspace{0.25cm}%
+        \flashcard{\tempE}{}% 
+        \flashcard{\tempF}{}% 
+        \flashcard{\tempG}{}%
+        \flashcard{\tempH}{}%
+
+        \vspace{0.25cm}%
+        \flashcard{\tempI}{}% 
+        \flashcard{\tempJ}{}% 
+        \flashcard{\tempK}{}%
+        \flashcard{\tempL}{}%
+
+        \vspace{0.25cm}%
+        \flashcard{\tempM}{}% 
+        \flashcard{\tempN}{}% 
+        \flashcard{\tempO}{}%
+        \flashcard{\tempP}{}%
+    }
+
+    \newpage
+
+    \raggedleft{%
+        \flashcard{\tempd}{\tempdd}%
+        \flashcard{\tempc}{\tempcc}%
+        \flashcard{\tempb}{\tempbb}% 
+        \flashcard{\tempa}{\tempaa}% 
+
+        \vspace{0.25cm}%
+        \flashcard{\temph}{\temphh}%
+        \flashcard{\tempg}{\tempgg}%
+        \flashcard{\tempf}{\tempff}% 
+        \flashcard{\tempe}{\tempee}% 
+
+        \vspace{0.25cm}%
+        \flashcard{\templ}{\templl}%
+        \flashcard{\tempk}{\tempkk}%
+        \flashcard{\tempj}{\tempjj}% 
+        \flashcard{\tempi}{\tempii}% 
+
+        \vspace{0.25cm}%
+        \flashcard{\tempp}{\temppp}%
+        \flashcard{\tempo}{\tempoo}%
+        \flashcard{\tempn}{\tempnn}% 
+        \flashcard{\tempm}{\tempmm}% 
+
+    }
+}
+
